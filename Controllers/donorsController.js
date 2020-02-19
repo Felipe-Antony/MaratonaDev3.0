@@ -11,8 +11,13 @@ module.exports = {
 
   async store(req, res) {
     const donors = await Donor.create(req.body);
-    
+
+    try {
       return res.redirect('/');
+    
+    } catch (error) {
+      return alert('Todos os campos são obrigatórios.')
+    }
   },
 
   async update(req, res) {

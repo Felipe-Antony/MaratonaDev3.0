@@ -98,7 +98,8 @@ form button:hover {
 
 main .donors {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  overflow: hidden;
 }
 
 .blood {
@@ -125,7 +126,6 @@ main .donors {
 
 .donor p {
   margin-top: 24px;
-  margin-bottom: 64px;
   font-size: 14px;
 }
 

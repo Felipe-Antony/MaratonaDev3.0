@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
   <title>Doe Sangue! Doe Vida!</title>
 </head>
 
@@ -32,7 +34,7 @@
   <main>
     <h2>Últimos <span>doadores</span></h2>
 
-    <section class="donors">
+    <section class="donors carousel">
      {% for donor in donors %}
         <div class="donor"> 
           <div class="blood">{{ donor.blood }}</div>
@@ -46,5 +48,17 @@
     Com ❤ Rocketseat
   </footer>
   <script src="./script.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+  <script type="text/javascript">
+    $('.carousel').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+    });
+  </script>
 </body>
 </html>
