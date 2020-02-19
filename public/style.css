@@ -96,16 +96,11 @@ form button:hover {
   color: white;
 }
 
-main .donors {
-  display: grid;
-  grid-template-columns: 1fr;
-  overflow: hidden;
-}
-
 .blood {
+  height: 80px;
   color: #ff4f4f;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,11 +119,14 @@ main .donors {
   transform: rotate(-45deg);
 }
 
-.donor p {
-  margin-top: 24px;
-  font-size: 14px;
+/*
+main .donors {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
 }
 
+*/
 footer {
   margin-top: auto;
   padding: 16px;
