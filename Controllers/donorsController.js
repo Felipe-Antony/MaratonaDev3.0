@@ -10,15 +10,29 @@ module.exports = {
   },
 
   async store(req, res) {
-    const donors = await Donor.create(req.body);
+    const { name, email, blood } = (req.body);
+    const donors = await Donor.find();
+    var error = [];
+    const sucess = [];
 
-    try {
-      return res.redirect('/');
-    
-    } catch (error) {
-      return alert('Todos os campos são obrigatórios.')
+    if (!name || typeof name == undefined || name == null){
+      error.push({ err: 'Nome inválido. Por favor digite um nome válido.' })
+    } 
+
+    if (!blood || typeof blood == undefined || blood == null || blood.length < 3) {
+      error.push({ err: 'Tipo sanguíneo inválido.' })
     }
-  },
+    
+    if (error.length > 0) {
+      return res.render('index.html', {error: error, donors})
+
+    } else {
+      await Donor.create(req.body);
+      sucess.push({ text: 'Cadastrado com sucesso em nosso bando de doadores!'})
+
+      return res.render('index.html', {sucess: sucess, donors });
+    }  
+  },    
 
   async update(req, res) {
     const donors = await Donor.findByIdAndUpdate(req.params.id, req.body, { new: true });

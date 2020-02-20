@@ -24,7 +24,7 @@ h1, h2 {
   color: #000000ee;
 }
 
-header, .form, main {
+header, .form, main, .container {
   width: 90%;
   max-width: 500px;
   margin: 0 auto 70px;
@@ -96,6 +96,25 @@ form button:hover {
   color: white;
 }
 
+section.container {
+  margin-top: -30px;
+}
+
+.span {
+  width: 100%;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+  padding: 8px 10px;
+
+  background-color: #ff4f4f;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  
+  border: 1px #fff solid;
+  border-radius: 4px;  
+}
+
 .blood {
   height: 80px;
   color: #ff4f4f;
@@ -119,14 +138,6 @@ form button:hover {
   transform: rotate(-45deg);
 }
 
-/*
-main .donors {
-  display: grid;
-  grid-template-columns: 1fr;
-  overflow: hidden;
-}
-
-*/
 footer {
   margin-top: auto;
   padding: 16px;
@@ -137,7 +148,7 @@ section.form {
   transition: all 300ms;
 }
 
-section.form.hide {
+section.form.hide, section.container.hide {
   opacity: 0;
   visibility: hidden;
   height: 0;
